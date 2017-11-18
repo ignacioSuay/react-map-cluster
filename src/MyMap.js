@@ -1,4 +1,7 @@
 import React from "react"
+import { createStore } from 'redux'
+
+
 const fetch = require("isomorphic-fetch");
 const { compose, withProps, withHandlers } = require("recompose");
 const {
@@ -39,7 +42,7 @@ const MapWithAMarkerClusterer = compose(
       {props.markers.map(marker => (
         <Marker
           key={marker.photo_id}
-          position={{ lat: marker.latitude, lng: marker.longitude }}
+          position={{ lat: marker.lat, lng: marker.lon }}
         />
       ))}
     </MarkerClusterer>
@@ -48,14 +51,16 @@ const MapWithAMarkerClusterer = compose(
 
 class DemoApp extends React.PureComponent {
   componentWillMount() {
-    this.setState({ markers: [] })
+    this.setState({ markers: [],
+     datas: [{lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}]
+     })
   }
 
   componentDidMount() {
     fetch("https://gist.githubusercontent.com/farrrr/dfda7dd7fccfec5474d3/raw/758852bbc1979f6c4522ab4e92d1c92cba8fb0dc/data.json")
       .then(res => res.json())
       .then(data => {
-        this.setState({ markers: data.photos });
+        this.setState({ markers: this.state.datas });
       });
   }
 
