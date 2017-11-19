@@ -1,6 +1,6 @@
 import React from "react"
 import { createStore } from 'redux'
-
+import tableData from './reducer'
 
 const fetch = require("isomorphic-fetch");
 const { compose, withProps, withHandlers } = require("recompose");
@@ -49,6 +49,8 @@ const MapWithAMarkerClusterer = compose(
   </GoogleMap>
 );
 
+
+
 class DemoApp extends React.PureComponent {
   componentWillMount() {
     this.setState({ markers: [],
@@ -65,6 +67,8 @@ class DemoApp extends React.PureComponent {
   }
 
   render() {
+      const store = createStore(tableData);
+      store.subscribe(() => {console.log("got it!!")});
     return (
       <MapWithAMarkerClusterer markers={this.state.markers} />
     )
