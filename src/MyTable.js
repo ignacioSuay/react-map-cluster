@@ -1,9 +1,13 @@
 // import React...
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 // ... and HotTable
 import HotTable from 'react-handsontable';
+
+import { createStore } from 'redux'
+import tableData from './reducer'
+
+const reduxStore = createStore(tableData);
 
 class ExampleComponent extends React.Component {
   constructor(props) {
@@ -22,8 +26,9 @@ class ExampleComponent extends React.Component {
         <HotTable root="hot" settings = {{
             data:this.handsontableData,
             onAfterChange: (changes, source) => {
-                      console.log(this.handsontableData)
-                    }
+                reduxStore.dispatch({type: "CHANGE", data: this.handsontableData})
+                console.log("changed table")
+            }
         }}
 
         colHeaders={true}
