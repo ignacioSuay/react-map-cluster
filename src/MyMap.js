@@ -2,6 +2,10 @@ import React from "react"
 import { createStore } from 'redux'
 import tableData from './reducer'
 
+
+const store = createStore(tableData);
+store.subscribe(() => {console.log("got it!!")});
+
 const fetch = require("isomorphic-fetch");
 const { compose, withProps, withHandlers } = require("recompose");
 const {
@@ -41,7 +45,7 @@ const MapWithAMarkerClusterer = compose(
     >
       {props.markers.map(marker => (
         <Marker
-          key={marker.photo_id}
+          key={marker.id}
           position={{ lat: marker.lat, lng: marker.lon }}
         />
       ))}
@@ -54,7 +58,7 @@ const MapWithAMarkerClusterer = compose(
 class DemoApp extends React.PureComponent {
   componentWillMount() {
     this.setState({ markers: [],
-     datas: [{lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}, {lat: 10, lon: 20}]
+     datas: [{id: 1, lat: 10, lon: 20}, {id: 2, lat: 10, lon: 20}, {id: 3, lat: 10, lon: 20}, {id: 4, lat: 10, lon: 20}, {id: 5, lat: 10, lon: 20}, {id: 6, lat: 10, lon: 20}]
      })
   }
 
@@ -67,8 +71,6 @@ class DemoApp extends React.PureComponent {
   }
 
   render() {
-      const store = createStore(tableData);
-      store.subscribe(() => {console.log("got it!!")});
     return (
       <MapWithAMarkerClusterer markers={this.state.markers} />
     )
