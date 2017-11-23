@@ -1,13 +1,15 @@
-export default (state = {id:1}, action) => {
+import {combineReducers} from "redux";
 
-    var i = 0;
+const tableData = (state = {}, action) => {
+
     if(action.type === "CHANGE"){
         console.log("reducer changing state");
-        console.log(action.data);
-        i = i + 1;
-        var newObj = {id: i};
-        return newObj;
+        return action.data;
     }
 
     return state;
-}
+};
+
+export default combineReducers({
+    tableData
+})

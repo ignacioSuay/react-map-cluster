@@ -7,9 +7,9 @@ class StupidComponent extends React.Component {
 
     render() {
         console.log("rerendering");
-        console.log(this.props);
+        console.log(this.props.tableData);
 
-        return (<div>{JSON.stringify(this.props)}</div>)
+        return (<div>{JSON.stringify(this.props.tableData.data)}</div>)
     }
 }
 
@@ -20,7 +20,7 @@ class StupidComponent extends React.Component {
 // };
 
 const mapStateToProps = (state) => {
-    return state
+    return {tableData: state.tableData}
 };
 
 export default connect(mapStateToProps)(StupidComponent);
