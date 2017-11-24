@@ -6,7 +6,7 @@ import MyTable from "./MyTable";
 import {createStore} from "redux";
 import tableData from "./reducer";
 import {Provider} from "react-redux";
-import StupidComponent from './components/StupidComponent';
+//import StupidComponent from './components/StupidComponent';
 
 const reduxStore = createStore(tableData);
 window.store = reduxStore
@@ -20,7 +20,6 @@ class App extends Component {
                         <img src={logo} className="App-logo" alt="logo"/>
                         <h1 className="App-title">Welcome to React</h1>
                     </header>
-                    <StupidComponent/>
                     <MyMap isMarkerShown={true}/>
                     <MyTable/>
                 </div>
