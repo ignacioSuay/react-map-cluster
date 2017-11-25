@@ -2,8 +2,10 @@
   "name": "react-map-cluster",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "react": "^16.1.1",
+    "react-bootstrap": "^0.31.5",
     "react-dom": "^16.1.1",
     "react-google-maps": "^9.2.2",
     "react-handsontable": "^0.3.1",
@@ -16,5 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-social-icons": "^2.7.0"
   }
 }
