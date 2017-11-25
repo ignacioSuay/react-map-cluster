@@ -43,11 +43,11 @@ class ExampleComponent extends React.Component {
                           colHeaders={true}
                           rowHeaders={true}
                           width="600"
-                          height="300"
+                          height="250"
                           stretchH="all"
                           manualColumnResize={true}
                           manualRowResize={true}
-                          minRows={6}
+                          minRows={9}
                           minSpareRows={1}
 
                 />
