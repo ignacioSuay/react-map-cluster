@@ -16,7 +16,7 @@ const MapWithAMarkerClusterer = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `1000px` }} />,
+    containerElement: <div style={{ height: `600px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withHandlers({
@@ -70,16 +70,19 @@ class DemoApp extends React.PureComponent {
      }
   }
 
-  render() {
-
-  var markers = []
-  if(this.props.tableData.data){
-    JSON.stringify(this.props.tableData.data)
-    markers = this.buildMarkers(this.props.tableData.data)
-  }else{
-    var iniData = [["Longitude","Latitude","Number of pins"],[10,11,12],[20,11,14],[30,15,12]]
-    markers = this.buildMarkers(iniData)
+  calcMarkers(){
+    var markers = []
+    if(this.props.tableData.data){
+      markers = this.buildMarkers(this.props.tableData.data)
+    }else{
+      var iniData = [["Longitude","Latitude","Number of pins"],[10,11,12],[20,11,14],[30,15,12]]
+      markers = this.buildMarkers(iniData)
     }
+    return markers;
+  }
+
+  render() {
+    var markers = this.calcMarkers()
     return (
       <MapWithAMarkerClusterer markers={markers} />
     )
@@ -89,6 +92,5 @@ class DemoApp extends React.PureComponent {
 const mapStateToProps = (state) => {
     return {tableData: state.tableData}
 };
-
 
 export default connect(mapStateToProps)(DemoApp);
