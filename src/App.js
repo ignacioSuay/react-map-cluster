@@ -6,6 +6,9 @@ import MyTable from "./MyTable";
 import {createStore} from "redux";
 import tableData from "./reducer";
 import {Provider} from "react-redux";
+import {Col} from "react-bootstrap"
+import { SocialIcon } from 'react-social-icons';
+
 //import StupidComponent from './components/StupidComponent';
 
 const reduxStore = createStore(tableData);
@@ -17,12 +20,17 @@ class App extends Component {
             <Provider store={reduxStore}>
                 <div className="App">
                     <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo"/>
-                        <h1 className="App-title">Welcome to React</h1>
+                        <h1 className="App-title">MAP CLUSTER TABLE</h1>
                     </header>
                     <MyMap isMarkerShown={true}/>
-                    <MyTable/>
+                    <Col md={6} s={6} mdOffset={3} xsOffset={3} className="table">
+                        <MyTable/>
+                    </Col>
+                    <SocialIcon url="http://twitter.com/ignacio_suay" className="icon"/>
+                    <SocialIcon url="https://github.com/ignacioSuay"  className="icon" color="black"/>
+                    <SocialIcon url="https://uk.linkedin.com/pub/ignacio-suay-mas/44/860/8b0" className="icon" />
                 </div>
+
             </Provider>
         );
     }
