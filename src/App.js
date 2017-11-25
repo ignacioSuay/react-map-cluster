@@ -20,7 +20,7 @@ class App extends Component {
             <Provider store={reduxStore}>
                 <div className="App">
                     <header className="App-header">
-                        <h1 className="App-title">MAP CLUSTER TABLE</h1>
+                        <h1 className="App-title"><i>Map clustering tool</i></h1>
                     </header>
                     <MyMap isMarkerShown={true}/>
                     <Col md={6} s={6} mdOffset={3} xsOffset={3} className="table">
