@@ -23,7 +23,7 @@ class App extends Component {
                         <h1 className="App-title"><i>Map clustering tool</i></h1>
                     </header>
                     <MyMap isMarkerShown={true}/>
-                    <Col md={6} s={6} mdOffset={3} xsOffset={3} className="table">
+                    <Col md={6} s={6} mdOffset={3} xsOffset={0} className="table">
                         <MyTable/>
                     </Col>
                     <SocialIcon url="http://twitter.com/ignacio_suay" className="icon"/>
