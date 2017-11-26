@@ -16,7 +16,7 @@ const MapWithAMarkerClusterer = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?key=AIzaSyC9y7LnW9USj3ucakOe6EkFknPg0cmVZpk&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `600px` }} />,
+    containerElement: <div style={{ height: `70vh` }} />,
     mapElement: <div style={{ height: `100%` }} />,
   }),
   withHandlers({
