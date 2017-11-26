@@ -1,3 +1,12 @@
+# Map Clustering Tool
+
+This project is a web application tool for generating map clustering pictures.
+
+Please have a look at a demo at: http://ignaciosuay.com/mapclustering/
+
+In order to use the tool you use need to provide the latitude and the longitude and the number of pins for a particular location.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
