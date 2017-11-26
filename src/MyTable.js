@@ -42,7 +42,6 @@ class ExampleComponent extends React.Component {
 
                           colHeaders={true}
                           rowHeaders={true}
-                          width="600"
                           height="250"
                           stretchH="all"
                           manualColumnResize={true}
